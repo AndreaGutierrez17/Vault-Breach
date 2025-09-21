@@ -82,3 +82,34 @@ function go(n){
 }
 // activa el primero
 items[0].classList.add('active');
+
+
+  const navMenu = document.getElementById('nav-menu');
+  const toggleBtn = document.querySelector('.nav-toggle');
+
+  function toggleMenu() {
+    navMenu.classList.toggle('show');
+  }
+
+  // 1) Cerrar al hacer clic en cualquier link del menú
+  navMenu.addEventListener('click', (e) => {
+    const a = e.target.closest('a');
+    if (!a) return;
+    navMenu.classList.remove('show');
+  });
+
+  // 2) Cerrar al hacer clic fuera del menú (cuando está abierto)
+  document.addEventListener('click', (e) => {
+    const clickInsideMenu = e.target.closest('#nav-menu') || e.target.closest('.nav-toggle');
+    if (!clickInsideMenu) navMenu.classList.remove('show');
+  });
+
+  // 3) Cerrar con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') navMenu.classList.remove('show');
+  });
+
+  // 4) Cerrar si cambia el tamaño a desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) navMenu.classList.remove('show');
+  });
