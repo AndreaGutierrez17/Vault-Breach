@@ -209,12 +209,43 @@
 
 
   <!-- Contact CTA -->
-  <section id="contact" class="hero">
-    <div class="hero-copy">
+<section id="contact" class="modules-section">
+  <div class="container">
+    <header class="section-header" style="text-align:center">
       <h2>Ready to secure your business?</h2>
-      <a href="#contact" class="btn primary">Get Started</a>
+      <p class="text-muted">Tell us a bit about your needs and we’ll follow up shortly.</p>
+    </header>
+
+    <div class="contact-wrap">
+      <form class="contact-form" action="https://formspree.io/f/your-id" method="POST">
+        <div class="grid">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            <span>Work Email</span>
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            <span>Company</span>
+            <input type="text" name="company">
+          </label>
+          <label class="full">
+            <span>How can we help?</span>
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <label class="consent full">
+            <input type="checkbox" name="consent" required>
+            <span>I agree to be contacted about my inquiry.</span>
+          </label>
+        </div>
+        <button type="submit" class="btn primary">Send Message</button>
+      </form>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <footer class="site-footer">

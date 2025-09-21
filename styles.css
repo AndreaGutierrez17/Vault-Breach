@@ -507,3 +507,32 @@ a:hover { text-decoration:underline }
   #about .why-text::before{ background-size: 80%; opacity:.10; }
 }
 
+#contact .contact-wrap{
+  max-width: 800px; margin: 0 auto;
+  background: var(--card); border:1px solid var(--stroke);
+  border-radius:16px; padding:22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+}
+#contact .contact-form .grid{
+  display:grid; grid-template-columns: 1fr 1fr; gap:14px;
+}
+#contact .contact-form label{ display:flex; flex-direction:column; gap:6px; }
+#contact .contact-form label.full{ grid-column: 1 / -1; }
+#contact .contact-form input,
+#contact .contact-form textarea{
+  background:rgba(255,255,255,.02);
+  border:1px solid var(--stroke);
+  border-radius:10px; color:var(--text);
+  padding:10px 12px; outline:none;
+}
+#contact .contact-form input:focus,
+#contact .contact-form textarea:focus{
+  border-color: color-mix(in srgb, var(--brand-2) 55%, var(--stroke));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-2) 25%, transparent);
+}
+#contact .contact-form .consent{
+  display:flex; align-items:center; gap:10px; flex-direction:row;
+}
+@media (max-width: 720px){
+  #contact .contact-form .grid{ grid-template-columns: 1fr; }
+}
